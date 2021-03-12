@@ -17,7 +17,7 @@ We are provided with the source code and the binary ELF executable once again.
 
 You know the drill.
 
-```
+```c
 $ pwn checksec manual
 [*] '/media/sf_Kali_Linux/manual'
 
