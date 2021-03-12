@@ -69,13 +69,61 @@ int win(long a, long b, long c){
 
 As you can see, from the checksec, this file does not have a canary unlike Baby, but NX is enabled. 
 
-We go on to read the source code, we see that the executable goes from the main() to the vuln() and takes an input with the gets call, but buffer only holds 128 bytes of input, then it returns.
+We go on to read the source code, we see that the executable goes from the main() to the vuln() and takes an input with the gets call, but buffer only holds 128 bytes of input, then it returns, allowing us to overflow this input.
 
-We can get our flag and win if we can make it such that the return address returns the function to the win() address.
+Furthermore, from the win function, we can see that flag.txt is being read from fopen, and then its copied into buf with fgets, and printed with printf.
 
-However, since this has NX enabled, and possibly even ASLR, returning to stack memory won't really work.
+Let's further analyse the binary in gdb-gef
 
-Rather, we can write to bss segment, which is writable uninitialised data, and then from there put the win address to obtain the flag.
+We disassemble the win function to see the segments of the fgets fopen printf
+
+```gdb
+
+   0x00000000004007c8 <+87>:	mov    esi,0x4008b4
+
+   0x00000000004007cd <+92>:	mov    edi,0x4008b6
+
+   0x00000000004007d2 <+97>:	call   0x400610 <fopen@plt>
+
+   0x00000000004007d7 <+102>:	mov    QWORD PTR [rbp-0x8],rax
+
+```
+
+As we can see from here, the file path is loaded into fopen, and the file is saved in rax, then rbp-0x8.
+
+```
+
+```gdb
+   0x00000000004007f6 <+133>:	mov    rdx,QWORD PTR [rbp-0x8]
+
+   0x00000000004007fa <+137>:	lea    rax,[rbp-0x50]
+
+   0x00000000004007fe <+141>:	mov    esi,0x40
+
+   0x0000000000400803 <+146>:	mov    rdi,rax
+
+   0x0000000000400806 <+149>:	call   0x4005d0 <fgets@plt>
+
+```
+
+Basically, fgets will write the flag into an offset of RBP-0x50
+
+```
+   0x000000000040080b <+154>:	lea    rax,[rbp-0x50]
+
+   0x000000000040080f <+158>:	mov    rdi,rax
+
+   0x0000000000400812 <+161>:	mov    eax,0x0
+
+   0x0000000000400817 <+166>:	call   0x4005b0 <printf@plt>
+
+```
+
+And printf will print whatever is in RBP-0x50 which is our flag.
+
+Hence now we know we want to overwrite the previous RBP address to a writeable memory, such that when leave function is passed, our rbp will be our overwritten writeable memory.
+
+However, where can we find writeable memory that we can set our rbp to? We can set our RBP to the uninitialized BSS segment of the memory.
 
 To obtain the address of the bss segment, we can run the following command
 
