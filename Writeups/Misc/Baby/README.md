@@ -87,7 +87,9 @@ Debugging and disassembling the vuln function in gdb-gef, we can find the start 
 
 So we want to use a format string attack to try to leak the stack, and we try to fill it with enough %x just under 100 characters.
 
-I open the file in gdb and set a breakpoint right after the first printf call, and then run it with "%x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x" as my input (notice that if you try anything more than this, you will likely get segmentation fault because you are overwriting your stack canary and you are going to fail the canary check, remember that you only want to leak the canary and not override it yet because you cannot bypass the canary without the canary address)
+I open the file in gdb and set a breakpoint right after the first printf call, and then run it with "%x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x %x" as my input 
+
+_(notice that if you try anything more than this, you will likely get ``*** stack smashing detected ***: terminated`` because you are overwriting your stack canary and you are going to fail the canary check, remember that you only want to leak the canary and not override it yet because you cannot bypass the canary without the canary address)_
 
 The binary file prints this
 
