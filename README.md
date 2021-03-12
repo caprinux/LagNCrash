@@ -16,14 +16,14 @@ Time: 10th March 2021 2:30PM - 12th March 2021 2:30PM (48 Hours)
 
 #### Reverse Engineering
 
-- **[Scissors Paper Stone]()** _45 points_
+- **[Scissors Paper Stone](https://github.com/caprinux/LagNCrash/tree/main/Writeups/RE/Scissors%20Paper%20Stone)** _45 points_
 
 #### Misc.
 
-- **[Tedious? Or is it?]()** _40 points_
-- **[Baby]()** _160 points_
-- **[Args]()** _700 points_
-- **[Manual]()** _730 points_
+- **[Tedious? Or is it?](https://github.com/caprinux/LagNCrash/tree/main/Writeups/Misc/Tedious)** _40 points_
+- **[Baby](https://github.com/caprinux/LagNCrash/tree/main/Writeups/Misc/Baby)** _160 points_
+- **[Args](https://github.com/caprinux/LagNCrash/tree/main/Writeups/Misc/Args)** _700 points_
+- **[Manual](https://github.com/caprinux/LagNCrash/tree/main/Writeups/Misc/Manual)** _730 points_
 
 #### Web
 
