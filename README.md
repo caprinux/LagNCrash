@@ -21,7 +21,6 @@ Time: 10th March 2021 2:30PM - 12th March 2021 2:30PM (48 Hours)
 #### Misc.
 
 - **[Tedious? Or is it?]()** _40 points_
-- **[Baby]()** _160 points_
 - **[Args]()** _700 points_
 - **[Manual]()** _730 points_
 
