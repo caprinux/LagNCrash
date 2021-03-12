@@ -123,6 +123,8 @@ Basically, fgets will write the flag into an offset of RBP-0x50
 
 And printf will print whatever is in RBP-0x50 which is our flag.
 
+Since it is going to write in a offset of RBP, it has to write in a writeable memory.
+
 Hence now we know we want to overwrite the previous RBP address to a writeable memory, such that when leave function is passed, our rbp will be our overwritten writeable memory.
 
 However, where can we find writeable memory that we can set our rbp to? We can set our RBP to the uninitialized BSS segment of the memory, which is always writeable.
