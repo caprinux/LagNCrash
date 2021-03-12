@@ -69,7 +69,9 @@ int win(long a, long b, long c){
 
 As you can see, from the checksec, this file does not have a canary unlike Baby, but NX is enabled. 
 
-We go on to read the source code, we see that the executable goes from the main() to the vuln() and takes an input with the gets call, but buffer only holds 128 bytes of input, then it returns, allowing us to overflow this input.
+We go on to read the source code, we see that the executable goes from the main() to the vuln() and takes an input with the gets call, gets call does not limit the number of bytes you can input.
+
+But buffer only holds 128 bytes of input, then it returns, this allows us to buffer overflow.
 
 Furthermore, from the win function, we can see that flag.txt is being read from fopen, and then its copied into buf with fgets, and printed with printf.
 
@@ -123,7 +125,7 @@ And printf will print whatever is in RBP-0x50 which is our flag.
 
 Hence now we know we want to overwrite the previous RBP address to a writeable memory, such that when leave function is passed, our rbp will be our overwritten writeable memory.
 
-However, where can we find writeable memory that we can set our rbp to? We can set our RBP to the uninitialized BSS segment of the memory.
+However, where can we find writeable memory that we can set our rbp to? We can set our RBP to the uninitialized BSS segment of the memory, which is always writeable.
 
 To obtain the address of the bss segment, we can run the following command
 
