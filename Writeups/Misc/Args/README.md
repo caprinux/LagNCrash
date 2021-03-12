@@ -151,7 +151,7 @@ win_addr_before_fopen = 0x00000000004007c8
 
 Now that we have everything, we can craft our exploit.
 
-```
+```py
 from pwn import *
 
 win_addr_before_fread = 0x00000000004007c8
