@@ -44,7 +44,7 @@ If you plug A or B into cyberchef, you will see that it is actually base64 encod
 
 After decoding our public keys and rearranging our variables, we get
 
-```
+```py
 g = 17746761831
 q = 1219113036371115975795111736303119121
 A = OTI5OTc0MTE4MDE1OTYyNDA3MzQxNjMyNTc1ODY4NTIzODE0
@@ -75,7 +75,7 @@ I arrive at this [git repository](https://github.com/ValarDragon/CTF-Crypto).
 
 We navigate to the Diffie Hellman sage script, copy and paste it into our [cryptohack docker and run it with sage](https://github.com/cryptohack/cryptohack-docker)
 
-```
+```sage
 g= 17746761831
 p= 1219113036371115975795111736303119121
 A = 929974118015962407341632575868523814
