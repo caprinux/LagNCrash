@@ -12,6 +12,8 @@ I can't seem to win the computer in scissors paper stone. Can you help me win it
 
 ### Solution
 
+_p.s. i'm quite bad at reading java and smali so this writeup may not be so good for ur eyes but welp_
+
 We run the APK in Android Studio and we see that the computer will always pick the choice that will win us. 
 
 The idea is that we want to reverse the choices such that we are the one who will always win rather than the computer.
