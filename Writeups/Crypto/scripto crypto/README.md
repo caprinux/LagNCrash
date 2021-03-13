@@ -42,7 +42,7 @@ Then it goes through every element in the table and decrypts it with rot13.
 
 Looking back at the table,
 
-```
+```py
 table = [b'J+TRKJnPo0EAaLH5oio7qW6lC92FUFY96kZPBFqj4NU=',
          b'UERMnI8D1rOakgIExgaBrSqxzgWkSl/PY58t5MuryL4=',
          b'CFXKWz5CUJJyPrQB1Axqo4K7xMEr6xKIxpCz9Q1+Lc8=',
