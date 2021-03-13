@@ -189,11 +189,7 @@ I tried the python code used in the referenced github earlier, however it didn't
 
 After googling for some time, I found this [website](https://blog.stayontarget.org/2019/03/decoding-mixed-case-usb-keystrokes-from.html)
 
-I copy pasted the script into my directory and ran it.
-
-![image](https://user-images.githubusercontent.com/76640319/111024754-76613e80-841b-11eb-9bc5-654d41d2bc28.png)
-
-I now run it with Leftover Capture Data that I got earlier.
+I copy pasted the script into my directory and ran it with the Leftover Capture Data we extracted earlier.
 
 ![image](https://user-images.githubusercontent.com/76640319/111024813-a7417380-841b-11eb-8826-8e7850189ed8.png)
 
@@ -206,7 +202,7 @@ pauth.thebestcereal.com looks like the website that this person was logging in t
 CcerealMantabT"v8&l=xZ_sR]del}uvdelV|L9@b~$;ddelD looks like the username and the password. Interpreting the keystrokes, we get:
 
 ```
-CcerealMan:T"v8&l=xZ_sR}uV|L9@b~$;D
+LNC{CcerealMan:T"v8&l=xZ_sR}uV|L9@b~$;D}
 ```
 
 However, if you tried submitting this, the ctf site would say flag is invalid.
