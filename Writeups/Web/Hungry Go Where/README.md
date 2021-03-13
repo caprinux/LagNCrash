@@ -60,7 +60,7 @@ That clearly looks like binary. Plugging the binary back into cyberchef, and cha
 064 103 040 064 105 040 064 063 040 067 102 040 067 064 040 064 070 040 066 061 040 066 105 040 064 102 040 067 063 040 065 106 040 066 066 040 063 060 040 067 062 040 065 106 040 067 064 040 064 070 040 066 065 040 065 106 040 066 066 040 063 060 040 063 060 040 066 064 040 067 104
 ```
 
-Now that's clearly octal. Converting the text from octal gives us some hex 
+Now that's octal. Converting the text from octal gives us some hex 
 
 ```
 4C 4E 43 7B 74 48 61 6E 4B 73 5F 66 30 72 5F 74 48 65 5F 66 30 30 64 7D
