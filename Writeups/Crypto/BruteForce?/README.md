@@ -28,7 +28,7 @@ The zip was encrypted with legacy encryption, can some sort of attacks break thi
 
 omg. is this a useful hint?!??! the lnc committee is giving us a USEFUL hint!?!?!? 
 
-I searched "break legacy encryption zip" on google and found [bkcrack](https://github.com/kimci86/bkcrack). _i found pkcrack too but i eventually used bkcrack_
+I searched "break legacy encryption zip" on google and found [bkcrack](https://github.com/kimci86/bkcrack). _i found pkcrack too but i eventually used bkcrack cause i felt it was faster (may be fake news)_
 
 The idea is that you need at least 12 bytes of whatever is inside the encrypted zip, and the larger the number of bytes of plaintext we have, the faster the attack.
 
