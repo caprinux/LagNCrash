@@ -6,6 +6,8 @@ Participated alongside 3 other teammates, and emerged 1st out of about 100 parti
 
 Definitely one of the most tiring CTFs yet, spanning over 48 hours and 6 waves of challenges, totalling 60 challenges.
 
+Will see y'all again in the next CTF: Cyberthon 2021 😙
+
 ![Screenshot 2021-03-12 211207](https://user-images.githubusercontent.com/76640319/110944615-a48d4280-8377-11eb-9e18-d9b05fcccd31.png)
 
 ---
