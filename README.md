@@ -8,6 +8,8 @@ Definitely one of the most tiring CTFs yet, spanning over 48 hours and 6 waves o
 
 Will see y'all again in the next CTF: Cyberthon 2021 😙
 
+![Top 10 Teams](https://user-images.githubusercontent.com/76640319/111247091-64adb000-8642-11eb-8d5d-156904c655a7.png)
+
 ![Screenshot 2021-03-12 211207](https://user-images.githubusercontent.com/76640319/110944615-a48d4280-8377-11eb-9e18-d9b05fcccd31.png)
 
 ---
